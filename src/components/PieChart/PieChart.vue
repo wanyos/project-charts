@@ -21,83 +21,35 @@ const option = ref({
   },
   tooltip: {
     trigger: 'item'
+    // formatter: '{a} <br/>{b} : {c} ({d}%)'
   },
   legend: {
     top: '10%',
+    orient: 'vertical',
     left: 'center',
-    orient: 'vertical'
+    data: ['Replied', 'No Replied']
   },
   series: [
     {
-      name: 'Access From',
+      name: 'Sent',
       type: 'pie',
+      radius: '55%',
+      center: ['50%', '60%'],
       color: ['#08B545', '#CEF0DA'],
-      radius: ['40%', '70%'],
-      top: '25%',
-      avoidLabelOverlap: false,
-      itemStyle: {
-        borderRadius: 10,
-        borderColor: '#fff',
-        borderWidth: 2
-      },
-      label: {
-        show: false,
-        position: 'center'
-      },
-      // emphasis: {
-      //   label: {
-      //     show: true,
-      //     fontSize: 40,
-      //     fontWeight: 'bold',
-      //     color: '#CEF0DA'
-      //   }
-      // },
-      labelLine: {
-        show: false
-      },
       data: [
         { value: 13, name: 'Replied' },
-        { value: 32, name: 'No replied' }
-      ]
+        { value: 32, name: 'No Replied' }
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
     }
   ]
 })
-
-// const option = ref({
-//   title: {
-//     text: 'Sent',
-//     left: 'center'
-//   },
-//   tooltip: {
-//     trigger: 'item',
-//     formatter: '{a} <br/>{b} : {c} ({d}%)'
-//   },
-//   legend: {
-//     orient: 'vertical',
-//     left: 'left',
-//     data: ['Replied', 'No Replied']
-//   },
-//   series: [
-//     {
-//       name: 'Sent',
-//       type: 'pie',
-//       radius: '55%',
-//       center: ['50%', '60%'],
-//       data: [
-//         { value: 335, name: 'Replied' },
-//         { value: 310, name: 'No Replied' },
-
-//       ],
-//       emphasis: {
-//         itemStyle: {
-//           shadowBlur: 10,
-//           shadowOffsetX: 0,
-//           shadowColor: 'rgba(0, 0, 0, 0.5)'
-//         }
-//       }
-//     }
-//   ]
-// })
 </script>
 
 <style scoped>
@@ -106,14 +58,5 @@ const option = ref({
   /* margin-top: 4em;
     width: 50%;
     height: 50%; */
-}
-
-.section {
-  /* border: 1px solid blue;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 50vw;
-    height: 50vh; */
 }
 </style>

@@ -1,7 +1,5 @@
 <template>
-  <section class="section">
-    <v-chart class="chart" :option="option" autoresize />
-  </section>
+  <v-chart class="chart" :option="option" autoresize />
 </template>
 
 <script setup>
@@ -64,58 +62,14 @@ const option = ref({
     }
   ]
 })
-
-// const option = ref({
-//   title: {
-//     text: 'Sent',
-//     left: 'center'
-//   },
-//   tooltip: {
-//     trigger: 'item',
-//     formatter: '{a} <br/>{b} : {c} ({d}%)'
-//   },
-//   legend: {
-//     orient: 'vertical',
-//     left: 'left',
-//     data: ['Replied', 'No Replied']
-//   },
-//   series: [
-//     {
-//       name: 'Sent',
-//       type: 'pie',
-//       radius: '55%',
-//       center: ['50%', '60%'],
-//       data: [
-//         { value: 335, name: 'Replied' },
-//         { value: 310, name: 'No Replied' },
-
-//       ],
-//       emphasis: {
-//         itemStyle: {
-//           shadowBlur: 10,
-//           shadowOffsetX: 0,
-//           shadowColor: 'rgba(0, 0, 0, 0.5)'
-//         }
-//       }
-//     }
-//   ]
-// })
 </script>
 
 <style scoped>
 .chart {
-  border: 1px solid red;
+  height: 100vh;
+  /* border: 1px solid red;
   margin-top: 4em;
   width: 50%;
-  height: 50%;
-}
-
-.section {
-  border: 1px solid blue;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  width: 50vw;
-  height: 50vh;
+  height: 50%; */
 }
 </style>

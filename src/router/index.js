@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HeatmapChartView from '../views/HeatmapChartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: '/heatmapcharts',
+      name: 'heatmapcharts',
+      component: HeatmapChartView
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/piecharts',
+      name: 'piecharts',
       component: () => import('../views/PieChartView.vue')
     }
   ]
