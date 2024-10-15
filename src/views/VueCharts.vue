@@ -1,7 +1,10 @@
 <template>
+  <h1>Vue Charts</h1>
   <nav class="nav">
-    <router-link to="vue-charts" class="nav__link">Vue-Charts</router-link>
-    <router-link to="vue-data-ui" class="nav__link">Vue-Data-UI</router-link>
+    <router-link to="piecharts" class="nav__link">PieCharts</router-link>
+    <router-link to="heatmapcharts" class="nav__link">HeatmapCharts</router-link>
+    <router-link to="scalecharts" class="nav__link">ScaleCharts</router-link>
+    <router-link to="barcharts" class="nav__link">BarCharts</router-link>
   </nav>
 
   <section>
@@ -11,7 +14,7 @@
 
 <script setup></script>
 
-<style scoped>
+<style lang="css" scoped>
 .nav {
   border: 1px solid black;
   border-radius: 15px;

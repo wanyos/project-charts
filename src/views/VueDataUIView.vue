@@ -1,7 +1,7 @@
 <template>
+  <h1>vue-data-ui</h1>
   <nav class="nav">
-    <router-link to="vue-charts" class="nav__link">Vue-Charts</router-link>
-    <router-link to="vue-data-ui" class="nav__link">Vue-Data-UI</router-link>
+    <router-link to="/vueuixy" class="nav__link">VueUiXy</router-link>
   </nav>
 
   <section>
@@ -11,7 +11,7 @@
 
 <script setup></script>
 
-<style scoped>
+<style lang="css" scoped>
 .nav {
   border: 1px solid black;
   border-radius: 15px;

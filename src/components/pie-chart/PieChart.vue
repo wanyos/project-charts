@@ -14,10 +14,26 @@ use([CanvasRenderer, PieChart, TitleComponent, TooltipComponent, LegendComponent
 
 provide(THEME_KEY, 'light')
 
+const props = defineProps({
+  colorSeries: {
+    type: Array,
+    default: () => []
+  },
+  textSeries: {
+    type: Array,
+    default: () => []
+  }
+})
+
 const option = ref({
   title: {
     text: 'Sent',
-    left: 'center'
+    left: 'center',
+    textStyle: {
+      color: '#4A4A4A',
+      fontFamily: 'Inter, sant-serif',
+      fontSize: 16
+    }
   },
   tooltip: {
     trigger: 'item'
@@ -27,22 +43,29 @@ const option = ref({
     top: '10%',
     orient: 'vertical',
     left: 'center',
-    data: ['Replied', 'No Replied']
+    itemGap: 20,
+    itemWidth: 30,
+    itemHeight: 23,
+    textStyle: {
+      fontSize: 16,
+      color: '#4A4A4A'
+    },
+    data: props.textSeries
   },
   series: [
     {
       name: 'Sent',
       type: 'pie',
       radius: '55%',
-      center: ['50%', '60%'],
-      color: ['#08B545', '#CEF0DA'],
+      center: ['50%', '50%'],
+      color: props.colorSeries,
       data: [
-        { value: 13, name: 'Replied' },
-        { value: 32, name: 'No Replied' }
+        { value: 13, name: props.textSeries[0] },
+        { value: 32, name: props.textSeries[1] }
       ],
       emphasis: {
         itemStyle: {
-          shadowBlur: 10,
+          shadowBlur: 40,
           shadowOffsetX: 0,
           shadowColor: 'rgba(0, 0, 0, 0.5)'
         }
