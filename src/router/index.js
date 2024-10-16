@@ -5,6 +5,8 @@ import BarChartView from '@/views/vuecharts-view/BarChartView.vue'
 import VueCharts from '@/views/VueCharts.vue'
 import VueDataUIView from '@/views/VueDataUIView.vue'
 import VueUiXyView from '@/views/vuedataui-view/VueUiXyView.vue'
+import VueUiHeatmapView from '@/views/vuedataui-view/VueUiHeatmapView.vue'
+import VueUiQuickChartView from '@/views/vuedataui-view/VueUiQuickChartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +47,16 @@ const router = createRouter({
           path: '/vueuixy',
           name: 'vueuixy',
           component: VueUiXyView
+        },
+        {
+          path: '/vueuiheatmap',
+          name: 'vueuiheatmap',
+          component: VueUiHeatmapView
+        },
+        {
+          path: '/vueuiquickchart',
+          name: 'vueuiquickchart',
+          component: VueUiQuickChartView
         }
       ]
     },

@@ -10,9 +10,9 @@
 </template>
 
 <script setup>
-import PieChart from '@/components/pie-chart/PieChart.vue'
-import DonnutChart from '@/components/pie-chart/DonnutChart.vue'
-import NightinChart from '@/components/pie-chart/NightinChart.vue'
+import PieChart from '@/components/vue-chart-components/pie-chart/PieChart.vue'
+import DonnutChart from '@/components/vue-chart-components/pie-chart/DonnutChart.vue'
+import NightinChart from '@/components/vue-chart-components/pie-chart/NightinChart.vue'
 
 const colorSeriesSent = ['#08B545', '#CEF0DA']
 const colorSeriesReceived = ['#0096FB', '#8DBCFD', '#CCEAFE']

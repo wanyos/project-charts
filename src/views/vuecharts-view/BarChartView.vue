@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import BarChart from '@/components/bar-chart/BarChart.vue'
-import LineGradientChart from '@/components/bar-chart/LineGradientChart.vue'
+import BarChart from '@/components/vue-chart-components/bar-chart/BarChart.vue'
+import LineGradientChart from '@/components/vue-chart-components/bar-chart/LineGradientChart.vue'
 
 const colorBar = '#08B545'
 </script>

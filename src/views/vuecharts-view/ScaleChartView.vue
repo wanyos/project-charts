@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import ScaleChart from '@/components/scale-chart/ScaleChart.vue'
+import ScaleChart from '@/components/vue-chart-components/scale-chart/ScaleChart.vue'
 const sliderColorSent = '#08B545'
 const sliderColorReceived = '#0096FB'
 

@@ -20,54 +20,53 @@ import 'vue-data-ui/style.css'
 //   }
 // ])
 
-// const dataset = ref([
-//   {
-//     values: [3, 12, 7, 9, 15, 27, 31]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 2]
-//   },
-//   {
-//     values: [5, 2, 11, 6, 3, 8, 9]
-//   },
-
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   },
-//   {
-//     values: [8, 9, 3, 18, 11, 7, 19]
-//   }
-// ])
+const dataset = ref([
+  {
+    values: [3, 12, 7, 9, 15, 27, 31]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 2]
+  },
+  {
+    values: [5, 2, 11, 6, 3, 8, 9]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  },
+  {
+    values: [8, 9, 3, 18, 11, 7, 19]
+  }
+])
 
 // const config = ref({
 //   style: {
@@ -331,36 +330,36 @@ import 'vue-data-ui/style.css'
 //   }
 // })
 
-const dataset = [
-  {
-    name: 'Mon',
-    values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-  },
-  {
-    name: 'Tue',
-    values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-  },
-  {
-    name: 'Wed',
-    values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-  },
-  {
-    name: 'Thu',
-    values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-  },
-  {
-    name: 'Fri',
-    values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-  },
-  {
-    name: 'Sat',
-    values: [1, 5, 0, 0, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-  },
-  {
-    name: 'Sun',
-    values: [1, 8, 1, 5, 1, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-  }
-]
+// const dataset = [
+//   {
+//     name: 'Mon',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
+//   },
+//   {
+//     name: 'Tue',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
+//   },
+//   {
+//     name: 'Wed',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
+//   },
+//   {
+//     name: 'Thu',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
+//   },
+//   {
+//     name: 'Fri',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
+//   },
+//   {
+//     name: 'Sat',
+//     values: [1, 5, 0, 0, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
+//   },
+//   {
+//     name: 'Sun',
+//     values: [1, 8, 1, 5, 1, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
+//   }
+// ]
 
 const config = ref({
   style: {
@@ -368,12 +367,13 @@ const config = ref({
     color: '#1A1A1A',
     fontFamily: 'inherit',
     layout: {
-      padding: { top: 0, right: 68, bottom: 0, left: 68 },
+      height: 36,
+      padding: { top: 10, right: 78, bottom: 0, left: 78 },
       cells: {
-        height: 100,
+        height: 185,
         value: { show: false, fontSize: 12, bold: false, roundingValue: 0, color: '#FFFFFF' },
         colors: { hot: '#469d3a', cold: '#c9f7c3', underlayer: '#8ae27e' },
-        spacing: 0.9,
+        spacing: 1.5,
         selected: { border: 1, color: '#469d3a' }
       },
       dataLabels: {
@@ -381,8 +381,8 @@ const config = ref({
         suffix: '',
         xAxis: {
           show: true,
-          values: [],
-          fontSize: 12,
+          values: ['00:00'],
+          fontSize: 54,
           color: '#1A1A1A',
           bold: false,
           offsetX: 0,
@@ -391,7 +391,7 @@ const config = ref({
         yAxis: {
           show: true,
           values: [],
-          fontSize: 12,
+          fontSize: 54,
           color: '#1A1A1A',
           bold: false,
           offsetY: 0,
@@ -415,9 +415,9 @@ const config = ref({
       color: '#ffffff',
       fontSize: 0,
       bold: true,
-      roundingValue: 0,
+      roundingValue: 50,
       position: 'right',
-      scaleBorderRadius: 12
+      scaleBorderRadius: 84
     },
     tooltip: {
       show: true,
@@ -460,13 +460,14 @@ const config = ref({
 
 <style lang="css" scoped>
 .div {
-  width: 75em;
+  width: 45em;
+
   margin: 0 auto;
   border: 1px solid black;
 }
 
 .chart {
   /* border: 2px solid black; */
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 </style>
