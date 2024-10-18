@@ -22,7 +22,8 @@ import 'vue-data-ui/style.css'
 
 const dataset = ref([
   {
-    values: [3, 12, 7, 9, 15, 27, 31]
+    values: [3, 12, 7, 9, 15, 27, 31],
+    color: '#08B545'
   },
   {
     values: [8, 9, 3, 18, 11, 7, 2]
@@ -363,12 +364,13 @@ const dataset = ref([
 
 const config = ref({
   style: {
+    responsive: true,
     backgroundColor: '#FFFFFF',
     color: '#1A1A1A',
     fontFamily: 'inherit',
     layout: {
-      height: 36,
-      padding: { top: 10, right: 78, bottom: 0, left: 78 },
+      height: 456,
+      padding: { top: 10, right: 3178, bottom: 0, left: 3178 },
       cells: {
         height: 185,
         value: { show: false, fontSize: 12, bold: false, roundingValue: 0, color: '#FFFFFF' },
@@ -460,8 +462,7 @@ const config = ref({
 
 <style lang="css" scoped>
 .div {
-  width: 45em;
-
+  width: 55em;
   margin: 0 auto;
   border: 1px solid black;
 }

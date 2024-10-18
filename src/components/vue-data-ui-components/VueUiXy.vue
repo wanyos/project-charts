@@ -19,39 +19,66 @@ const getDaysMonth = () => {
 }
 
 const props = defineProps({
-    colorChart: {
-        type: String,
-        default: ''
-    },
-    dataType: {
-        type: Object,
-        default: () => {}
-    }
-});
+  colorChart: {
+    type: String,
+    default: ''
+  },
+  dataType: {
+    type: Object,
+    default: () => {}
+  },
+  nameType: {
+    type: String,
+    default: ''
+  }
+})
+
+// onMounted(() => {
+//   // dataset.push(props.dataType)
+//   // console.log('data prop', props.dataType)
+//   // pr.value = props.dataType
+//   // // dataset.value.push(props.dataType)
+//   // console.log('pr', pr.value)
+//   // console.log('dataset', dataset)
+//   // dataset.value = [
+//   //   {
+//   //     name: props.dataType.name,
+//   //     series: [5, 14, 11, 13, 8, 5, 3, 2, 1, 1, 0, 1, 1, 2, 3, 5, 8, 3, 1, 4, 5],
+//   //     type: 'line',
+//   //     color: props.colorChart,
+//   //     useProgression: false,
+//   //     dataLabels: false,
+//   //     useArea: true,
+//   //     shape: '',
+//   //     scaleSteps: 10,
+//   //     scaleLabel: ''
+//   //   }
+//   // ]
+// })
 
 const dataset = ref([
-// {
-//     name: props.dataType.name,
-//     series:props.dataType.series,
-//     type: props.dataType.type,
-//     color: props.dataType.color,
-//     useProgression: props.dataType.useProgression,
-//     dataLabels: props.dataType.dataLabels,
-//     useArea: props.dataType.useArea,
-//     shape: props.dataType.shape,
-//     scaleSteps: props.dataType.scaleSteps,
-//     scaleLabel: props.dataType.scaleLabel
-//   },
-//   {
-//     name: 'Series 1',
-//     series: [-55, -34, -21, -13, -8, -5, -3, -2, -1, -1, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55],
-//     type: 'bar',
-//     color: 'rgb(95,139,238)',
-//     scaleSteps: 10,
-//     scaleLabel: 'Blue circles'
-//   },
+  // {
+  //     name: props.dataType.name,
+  //     series:props.dataType.series,
+  //     type: props.dataType.type,
+  //     color: props.dataType.color,
+  //     useProgression: props.dataType.useProgression,
+  //     dataLabels: props.dataType.dataLabels,
+  //     useArea: props.dataType.useArea,
+  //     shape: props.dataType.shape,
+  //     scaleSteps: props.dataType.scaleSteps,
+  //     scaleLabel: props.dataType.scaleLabel
+  //   },
+  //   {
+  //     name: 'Series 1',
+  //     series: [-55, -34, -21, -13, -8, -5, -3, -2, -1, -1, 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55],
+  //     type: 'bar',
+  //     color: 'rgb(95,139,238)',
+  //     scaleSteps: 10,
+  //     scaleLabel: 'Blue circles'
+  //   },
   {
-    name: '',
+    name: props.nameType,
     series: [5, 14, 11, 13, 8, 5, 3, 2, 1, 1, 0, 1, 1, 2, 3, 5, 8, 3, 1, 4, 5],
     type: 'line',
     color: props.colorChart,
@@ -61,39 +88,39 @@ const dataset = ref([
     shape: '',
     scaleSteps: 10,
     scaleLabel: ''
-  },
-//   {
-//     name: 'Series 3',
-//     series: [64, 60, 52, 42, 30, 16, 0, -18, -38, -46, -50, -46, -38, -18, 0, 16, 30, 42, 52, 60, 64],
-//     type: 'plot',
-//     color: 'rgb(255,100,0)',
-//     shape: 'star',
-//     scaleSteps: 10,
-//     scaleLabel: 'Plots'
-//   },
-//   {
-//     name: 'Series 4',
-//     series: [0, 1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20],
-//     comments: ['', '', '', '', '', '', '', '', '', '', '', 'A comment for this specific datapoint'],
-//     type: 'line',
-//     smooth: true,
-//     color: 'rgb(200,200,50)',
-//     shape: 'diamond',
-//     scaleSteps: 10,
-//     scaleLabel: ''
-//   },
-//   {
-//     name: 'Target',
-//     series: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
-//     type: 'line',
-//     color: '#404040',
-//     dashed: true,
-//     useTag: 'start',
-//     dataLabels: false,
-//     shape: 'circle',
-//     scaleSteps: 10,
-//     scaleLabel: 'Black circles'
-//   }
+  }
+  //   {
+  //     name: 'Series 3',
+  //     series: [64, 60, 52, 42, 30, 16, 0, -18, -38, -46, -50, -46, -38, -18, 0, 16, 30, 42, 52, 60, 64],
+  //     type: 'plot',
+  //     color: 'rgb(255,100,0)',
+  //     shape: 'star',
+  //     scaleSteps: 10,
+  //     scaleLabel: 'Plots'
+  //   },
+  //   {
+  //     name: 'Series 4',
+  //     series: [0, 1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16, 17, -18, 19, -20],
+  //     comments: ['', '', '', '', '', '', '', '', '', '', '', 'A comment for this specific datapoint'],
+  //     type: 'line',
+  //     smooth: true,
+  //     color: 'rgb(200,200,50)',
+  //     shape: 'diamond',
+  //     scaleSteps: 10,
+  //     scaleLabel: ''
+  //   },
+  //   {
+  //     name: 'Target',
+  //     series: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+  //     type: 'line',
+  //     color: '#404040',
+  //     dashed: true,
+  //     useTag: 'start',
+  //     dataLabels: false,
+  //     shape: 'circle',
+  //     scaleSteps: 10,
+  //     scaleLabel: 'Black circles'
+  //   }
 ])
 
 const config = ref({
@@ -103,7 +130,13 @@ const config = ref({
   chart: {
     backgroundColor: '#FFFFFF',
     color: '#1a1a1a',
-    highlighter: { color: props.colorChart, opacity: 0, useLine: false, lineDasharray: 0, lineWidth: 1 },
+    highlighter: {
+      color: props.colorChart,
+      opacity: 0,
+      useLine: false,
+      lineDasharray: 0,
+      lineWidth: 1
+    },
     // timeTag: {
     //   show: false,
     //   backgroundColor: '#2A2A2A',
@@ -149,7 +182,7 @@ const config = ref({
           yLabelOffsetX: 0,
           xLabel: '',
           xLabelOffsetY: 0,
-          fontSize: 20
+          fontSize: 24
         },
         zeroLine: { show: false },
         yAxis: {
@@ -166,32 +199,9 @@ const config = ref({
           show: true,
           showOnlyFirstAndLast: false,
           values: getDaysMonth(),
-        //   values: [
-        //     'JAN',
-        //     'FEB',
-        //     'MAR',
-        //     'APR',
-        //     'MAY',
-        //     'JUN',
-        //     'JUL',
-        //     'AUG',
-        //     'SEP',
-        //     'OCT',
-        //     'NOV',
-        //     'DEC',
-        //     'JAN',
-        //     'FEB',
-        //     'MAR',
-        //     'APR',
-        //     'MAY',
-        //     'JUN',
-        //     'JUL',
-        //     'AUG',
-        //     'SEP'
-        //   ],
           fontSize: 22,
           yOffset: 2,
-          rotation: 30,
+          rotation: 35,
           showOnlyAtModulo: false,
           modulo: 18
         }
@@ -199,7 +209,7 @@ const config = ref({
     },
     // comments: { show: true, showInTooltip: true, width: 50, offsetX: 0, offsetY: -64 },
     // labels: { fontSize: 20, prefix: '', suffix: '' },
-    legend: { show: true, color: '#c8c8c8', fontSize: 10 },
+    legend: { show: false, color: '#c8c8c8', fontSize: 10 },
     // title: {
     //   show: false,
     //   text: 'Title',
@@ -253,43 +263,43 @@ const config = ref({
         stack: 'Toggle stack mode'
       }
     }
-  },
-//   bar: {
-//     borderRadius: 8,
-//     useGradient: true,
-//     periodGap: 0.1,
-//     border: { useSerieColor: false, strokeWidth: 1, stroke: '#1A1A1A' },
-//     labels: { show: true, offsetY: -6, rounding: 0, color: '#c8c8c8' },
-//     serieName: {
-//       show: false,
-//       offsetY: -6,
-//       useAbbreviation: true,
-//       useSerieColor: true,
-//       color: '#c8c8c8',
-//       bold: false,
-//       abbreviationSize: 3
-//     }
-//   },
-//   line: {
-//     radius: 3,
-//     useGradient: true,
-//     strokeWidth: 2,
-//     labels: { show: true, offsetY: -6, rounding: 0, color: '#c8c8c8' },
-//     area: { useGradient: true, opacity: 30 }
-//   },
-//   plot: {
-//     radius: 3,
-//     useGradient: true,
-//     labels: { show: false, offsetY: -6, rounding: 0, color: '#c8c8c8' }
-//   },
-//   table: {
-//     rounding: 0,
-//     responsiveBreakpoint: 400,
-//     sparkline: true,
-//     th: { backgroundColor: '#1A1A1A', color: '#c8c8c8', outline: 'none' },
-//     td: { backgroundColor: '#1A1A1A', color: '#c8c8c8', outline: 'none' },
-//     columnNames: { period: 'Period', total: 'Total' }
-//   }
+  }
+  //   bar: {
+  //     borderRadius: 8,
+  //     useGradient: true,
+  //     periodGap: 0.1,
+  //     border: { useSerieColor: false, strokeWidth: 1, stroke: '#1A1A1A' },
+  //     labels: { show: true, offsetY: -6, rounding: 0, color: '#c8c8c8' },
+  //     serieName: {
+  //       show: false,
+  //       offsetY: -6,
+  //       useAbbreviation: true,
+  //       useSerieColor: true,
+  //       color: '#c8c8c8',
+  //       bold: false,
+  //       abbreviationSize: 3
+  //     }
+  //   },
+  //   line: {
+  //     radius: 3,
+  //     useGradient: true,
+  //     strokeWidth: 2,
+  //     labels: { show: true, offsetY: -6, rounding: 0, color: '#c8c8c8' },
+  //     area: { useGradient: true, opacity: 30 }
+  //   },
+  //   plot: {
+  //     radius: 3,
+  //     useGradient: true,
+  //     labels: { show: false, offsetY: -6, rounding: 0, color: '#c8c8c8' }
+  //   },
+  //   table: {
+  //     rounding: 0,
+  //     responsiveBreakpoint: 400,
+  //     sparkline: true,
+  //     th: { backgroundColor: '#1A1A1A', color: '#c8c8c8', outline: 'none' },
+  //     td: { backgroundColor: '#1A1A1A', color: '#c8c8c8', outline: 'none' },
+  //     columnNames: { period: 'Period', total: 'Total' }
+  //   }
 })
 </script>
 

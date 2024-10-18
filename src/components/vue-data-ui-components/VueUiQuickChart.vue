@@ -18,7 +18,7 @@ const getDaysMonth = () => {
   return daysOfMonth
 }
 
-const dataset =  ref([11, 2, 2, 5, 18, 13, 21, 4, 5, 9])
+const dataset = ref([11, 2, 2, 5, 18, 13, 21, 4, 5, 9, 11])
 
 // const dataset = ref([
 //     {
@@ -35,32 +35,32 @@ const config = ref({
   barGap: 12,
   barStrokeWidth: 1,
   blurOnHover: true,
-  chartIsBarUnderDatasetLength: 6,
+  chartIsBarUnderDatasetLength: 9,
   color: '#1a1a1a',
-  dataLabelFontSize: 14,
-  dataLabelRoundingPercentage: 1,
-  dataLabelRoundingValue: 1,
-  donutHideLabelUnderPercentage: 3,
-  donutLabelMarkerStrokeWidth: 1,
-  donutRadiusRatio: 0.4,
-  donutShowTotal: true,
-  donutStrokeWidth: 2,
-  donutThicknessRatio: 0.18,
-  donutTotalLabelFontSize: 24,
+  dataLabelFontSize: 18,
+  dataLabelRoundingPercentage: 9,
+  dataLabelRoundingValue: 9,
+  donutHideLabelUnderPercentage: 9,
+  donutLabelMarkerStrokeWidth: 9,
+  donutRadiusRatio: 0.9,
+  donutShowTotal: false,
+  donutStrokeWidth: 8,
+  donutThicknessRatio: 0.25,
+  donutTotalLabelFontSize: 29,
   donutTotalLabelOffsetY: 0,
   //   donutTotalLabelText: 'Total',
-  donutUseShadow: false,
+  donutUseShadow: true,
   donutShadowColor: '#08B545',
   fontFamily: 'inherit',
   height: 338,
 
-  legendFontSize: 20,
+  legendFontSize: 232,
   legendIcon: 'none',
-  legendIconSize: 12,
+  legendIconSize: 56,
   lineAnimated: true,
   lineSmooth: true,
-  lineStrokeWidth: 2,
-  paletteStartIndex: 0,
+  lineStrokeWidth: 6,
+  paletteStartIndex: 4,
   showDataLabels: true,
   showLegend: true,
   showTooltip: true,
@@ -85,7 +85,7 @@ const config = ref({
   tooltipFontSize: 14,
   tooltipBackgroundOpacity: 70,
   tooltipPosition: 'center',
-  tooltipOffsetY: 24,
+  tooltipOffsetY: 34,
   useCustomLegend: false,
   valuePrefix: '',
   valueSuffix: '',
@@ -93,32 +93,32 @@ const config = ref({
   xyAxisStroke: '#4A4A4A',
   xyAxisStrokeWidth: 1,
   //   xyGridStroke: '#5A5A5A',
-  xyGridStrokeWidth: 0.5,
+  xyGridStrokeWidth: 0.2,
   xyHighlighterColor: '#FFFFFF',
-  xyHighlighterOpacity: 0.05,
+  xyHighlighterOpacity: 0.5,
   xyLabelsXFontSize: 12,
   xyLabelsYFontSize: 12,
   xyPaddingBottom: 18,
   xyPaddingLeft: 48,
-  xyPaddingRight: 12,
-  xyPaddingTop: 24,
-   xyPeriods: getDaysMonth(),
-//   xyPeriods: [
-//     '01 Apr',
-//     '02 Apr',
-//     '03 Apr',
-//     '04 Apr',
-//     '05 Apr',
-//     '06 Apr',
-//     '07 Apr',
-//     '08 Apr',
-//     '09 Apr',
-//     '10 Apr',
-//     '11 Apr',
-//     '12 Apr',
-//     '13 Apr',
-//     '14 Apr'
-//   ],
+  xyPaddingRight: 48,
+  xyPaddingTop: 20,
+  xyPeriods: getDaysMonth(),
+  //   xyPeriods: [
+  //     '01 Apr',
+  //     '02 Apr',
+  //     '03 Apr',
+  //     '04 Apr',
+  //     '05 Apr',
+  //     '06 Apr',
+  //     '07 Apr',
+  //     '08 Apr',
+  //     '09 Apr',
+  //     '10 Apr',
+  //     '11 Apr',
+  //     '12 Apr',
+  //     '13 Apr',
+  //     '14 Apr'
+  //   ],
   xyPeriodLabelsRotation: 12,
   xyScaleSegments: 5,
   xyShowAxis: true,
@@ -126,15 +126,13 @@ const config = ref({
   xyShowScale: true,
   //   yAxisLabel: 'Quantity',
   //   xAxisLabel: 'Time',
-  axisLabelsFontSize: 12,
+  axisLabelsFontSize: 18,
   zoomXy: true,
   zoomColor: '#08B545',
   zoomHighlightColor: '#08B545',
-  zoomFontSize: 12,
+  zoomFontSize: 14,
   zoomUseResetSlot: false
 })
-
-
 </script>
 
 <style lang="css" scoped>
@@ -142,4 +140,3 @@ div {
   width: 25em;
 }
 </style>
-

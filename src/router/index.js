@@ -57,6 +57,11 @@ const router = createRouter({
           path: '/vueuiquickchart',
           name: 'vueuiquickchart',
           component: VueUiQuickChartView
+        },
+        {
+          path: '/vueuipie',
+          name: 'vueuipie',
+          component: () => import('../views/vuedataui-view/VueUiPieView.vue')
         }
       ]
     },
