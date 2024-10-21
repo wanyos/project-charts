@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VueDataUi component="VueUiTableHeatmap" :dataset="datasett" :config="configg" />
+    <VueDataUi component="VueUiTableHeatmap" :dataset="dataset" :config="config" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import { ref } from 'vue'
 import { VueDataUi } from 'vue-data-ui'
 import 'vue-data-ui/style.css'
 
-const datasett = ref([
+const dataset = ref([
   {
     name: 'Serie 1',
     values: [20, 30, 40, 50, 40, 30, 20],
@@ -42,10 +42,10 @@ const datasett = ref([
   }
 ])
 
-const configg = ref({
+const config = ref({
   style: {
-    backgroundColor: '#1A1A1A',
-    color: '#ffffff',
+    backgroundColor: '#ffffff',
+    color: '#1a1a1a',
     fontFamily: 'inherit',
     shapeSize: 14,
     heatmapColors: { useIndividualScale: false, min: '#FFFFFF', max: '#5f8bee' }
@@ -61,13 +61,15 @@ const configg = ref({
       values: ['', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'TOTAL', 'AVG', 'MED']
     }
   },
-  userOptions: { show: false, buttons: { pdf: true, img: true, csv: true, fullscreen: true } }
+  userOptions: { show: true, buttons: { pdf: true, img: true, csv: true, fullscreen: true } }
 })
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 div {
+  width: 55em;
+  height: 15em;
   border: 1px solid black;
-  width: 80%;
+  margin: 0 auto;
 }
 </style>

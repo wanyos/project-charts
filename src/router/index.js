@@ -7,6 +7,8 @@ import VueDataUIView from '@/views/VueDataUIView.vue'
 import VueUiXyView from '@/views/vuedataui-view/VueUiXyView.vue'
 import VueUiHeatmapView from '@/views/vuedataui-view/VueUiHeatmapView.vue'
 import VueUiQuickChartView from '@/views/vuedataui-view/VueUiQuickChartView.vue'
+import VueLightweightView from '@/views/VueLightweightView.vue'
+import VueApexChartView from '@/views/VueApexChartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -66,8 +68,43 @@ const router = createRouter({
       ]
     },
     {
-      path: '/',
-      redirect: '/main' // Redirige a la ruta principal
+      path: '/vue-lightweight',
+      name: 'vuelightweight',
+      component: VueLightweightView,
+      children: [
+        {
+          path: '/vuelightlw',
+          name: 'vuelightlw',
+          component: () => import('../views/vuelightweight-view/VueLwView.vue')
+        }
+      ]
+    },
+    {
+      path: '/vue-apexchart',
+      name: 'apexchart',
+      component: VueApexChartView,
+      children: [
+        {
+          path: '/apexchartheatmap',
+          name: 'apexchartheatmap',
+          component: () => import('../views/vueapexchart-view/HeatMapView.vue')
+        },
+        {
+          path: '/apexchartarea',
+          name: 'apexchartarea',
+          component: () => import('../views/vueapexchart-view/AreaChartView.vue')
+        },
+        {
+          path: '/apexchartbar',
+          name: 'apexchartbar',
+          component: () => import('../views/vueapexchart-view/BarChartView.vue')
+        },
+        {
+          path: '/apexchartdonnut',
+          name: 'apexchartdonnut',
+          component: () => import('../views/vueapexchart-view/DonnutChartView.vue')
+        }
+      ]
     }
   ]
 })

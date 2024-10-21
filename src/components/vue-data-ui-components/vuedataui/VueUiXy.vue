@@ -369,13 +369,13 @@ const config = ref({
     color: '#1A1A1A',
     fontFamily: 'inherit',
     layout: {
-      height: 456,
-      padding: { top: 10, right: 3178, bottom: 0, left: 3178 },
+      padding: { top: 10, right: 4500, bottom: 0, left: 4500 },
+      grid: { show: true, stroke: '#1a1a1a', strokeWidth: 3 },
       cells: {
-        height: 185,
+        height: 920,
         value: { show: false, fontSize: 12, bold: false, roundingValue: 0, color: '#FFFFFF' },
         colors: { hot: '#469d3a', cold: '#c9f7c3', underlayer: '#8ae27e' },
-        spacing: 1.5,
+        spacing: 2.0,
         selected: { border: 1, color: '#469d3a' }
       },
       dataLabels: {
@@ -384,7 +384,7 @@ const config = ref({
         xAxis: {
           show: true,
           values: ['00:00'],
-          fontSize: 54,
+          fontSize: 12,
           color: '#1A1A1A',
           bold: false,
           offsetX: 0,
@@ -393,7 +393,7 @@ const config = ref({
         yAxis: {
           show: true,
           values: [],
-          fontSize: 54,
+          fontSize: 12,
           color: '#1A1A1A',
           bold: false,
           offsetY: 0,
@@ -468,7 +468,7 @@ const config = ref({
 }
 
 .chart {
-  /* border: 2px solid black; */
+  border: 2px solid black;
   /* border: 1px solid blue; */
 }
 </style>

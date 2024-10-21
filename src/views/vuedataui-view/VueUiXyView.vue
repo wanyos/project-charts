@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import VueUiXy from '@/components/vuedataui/VueUiXy.vue'
-// import VueUiTableHeatmap from '@/components/vuedataui/VueUiTableHeatmap.vue'
+import VueUiXy from '../../components/vue-data-ui-components/vuedataui/VueUiXy.vue'
+// import VueUiTableHeatmap from '../../components/vue-data-ui-components/vuedataui/VueUiTableHeatmap.vue'
 </script>
 
 <style lang="css" scoped></style>

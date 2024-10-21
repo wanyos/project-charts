@@ -1,11 +1,11 @@
 <template>
   <header>
-    <h1>VueCharts</h1>
+    <h1>VueApexCharts</h1>
     <nav class="nav">
-      <router-link to="piecharts" class="nav__link">PieCharts</router-link>
-      <router-link to="heatmapcharts" class="nav__link">HeatmapCharts</router-link>
-      <router-link to="scalecharts" class="nav__link">ScaleCharts</router-link>
-      <router-link to="barcharts" class="nav__link">BarCharts</router-link>
+      <router-link to="apexchartheatmap" class="nav__link">Heatmap</router-link>
+      <router-link to="apexchartarea" class="nav__link">AreaChart</router-link>
+      <router-link to="apexchartbar" class="nav__link">BarChart</router-link>
+      <router-link to="apexchartdonnut" class="nav__link">DonnutChart</router-link>
     </nav>
   </header>
 
@@ -16,7 +16,7 @@
 
 <script setup></script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 header {
   display: flex;
   align-items: center;

@@ -1,11 +1,8 @@
 <template>
   <header>
-    <h1>VueCharts</h1>
+    <h1>VueLightWeight</h1>
     <nav class="nav">
-      <router-link to="piecharts" class="nav__link">PieCharts</router-link>
-      <router-link to="heatmapcharts" class="nav__link">HeatmapCharts</router-link>
-      <router-link to="scalecharts" class="nav__link">ScaleCharts</router-link>
-      <router-link to="barcharts" class="nav__link">BarCharts</router-link>
+      <router-link to="/vuelightlw" class="nav__link">VueLightLw</router-link>
     </nav>
   </header>
 
@@ -16,7 +13,7 @@
 
 <script setup></script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 header {
   display: flex;
   align-items: center;

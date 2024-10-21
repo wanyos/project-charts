@@ -1,7 +1,9 @@
 <template>
   <nav class="nav">
-    <router-link to="vue-charts" class="nav__link">Vue-Charts</router-link>
-    <router-link to="vue-data-ui" class="nav__link">Vue-Data-UI</router-link>
+    <router-link to="vue-charts" class="nav__link">VueCharts</router-link>
+    <router-link to="vue-data-ui" class="nav__link">VueDataUI</router-link>
+    <router-link to="vue-lightweight" class="nav__link">VueLightWeight</router-link>
+    <router-link to="vue-apexchart" class="nav__link">VueApexChart</router-link>
   </nav>
 
   <section>
@@ -12,10 +14,18 @@
 <script setup></script>
 
 <style scoped>
+* {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
 .nav {
-  border: 1px solid black;
-  border-radius: 15px;
-  padding: 25px;
+  width: 60%;
+  margin: 0 auto;
+  border-bottom: 3px solid black;
+  padding: 15px;
   display: flex;
   justify-content: center;
 }
@@ -25,7 +35,7 @@
   border: 1px solid black;
   padding: 10px 15px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
   margin: 0 10px;
 }
 
