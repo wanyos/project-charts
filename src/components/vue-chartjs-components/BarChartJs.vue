@@ -1,5 +1,5 @@
 <template>
-  <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+  <Bar id="my-chart-id" height="275px" :options="chartOptions" :data="chartData" />
 </template>
 
 <script setup>
@@ -19,31 +19,34 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const chartData = ref({
   labels: [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
+    '< 15m',
+    '1h',
+    '4h',
+    '12h',
+    '1d',
+    '2d',
+    '> 2d'
   ],
   datasets: [
     {
-      label: 'Data One',
-      backgroundColor: '#f87979',
-      data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+      backgroundColor: '#629dcb',
+      data: [0.1, 2, 1.2, 3.9, 1, 4.0, 9]
     }
   ]
 })
 
 const chartOptions = ref({
   responsive: false,
-  maintainAspectRatio: false
+  maintainAspectRatio: false,
+  plugins: {
+            title: {
+                display: true,
+                text: 'Custom Chart Title'
+            },
+            legend: {
+              display: false
+            }
+        }
 })
 </script>
 
