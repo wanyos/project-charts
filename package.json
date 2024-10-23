@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "apexcharts": "^3.54.1",
+    "chart.js": "^4.4.5",
+    "chartjs-chart-matrix": "^2.0.1",
     "echarts": "^5.5.1",
     "lightweight-charts": "^4.2.1",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
+    "vue-chartjs": "^5.3.1",
     "vue-data-ui": "^2.3.25",
     "vue-echarts": "^7.0.3",
     "vue-router": "^4.3.3",

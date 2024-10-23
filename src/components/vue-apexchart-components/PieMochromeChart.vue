@@ -73,7 +73,7 @@ const chartOptions = reactive({
       fontSize: '12px',
       fontWeight: 200,
       fontFamily: 'Arial, sans-serif',
-      colors: ['#1a1a1a']
+      colors: ['#fff']
     }
   },
   //   fill: {
@@ -97,6 +97,6 @@ const chartOptions = reactive({
 
 <style lang="scss" scoped>
 .div__main {
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 </style>

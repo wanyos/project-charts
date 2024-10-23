@@ -158,6 +158,38 @@ const updateData = (timeline) => {
     }
   }
 }
+
+// const handleMouseLeave = () => {
+//     // Obtiene la instancia del chart
+//     const chartInstance = chartRef.value?.chart;
+//     if (chartInstance?.toolbar) {
+//         const menu = chartInstance.toolbar.elMenu;
+//         if (menu && menu.classList.contains('apexcharts-menu-open')) {
+//             chartInstance.toolbar.toggleMenu();
+//         }
+//     }
+//     // const exportButton = chartInstance.toolbar.elMenu;
+//     if (chartInstance?.toolbar) {
+//         console.log('Propiedades del toolbar:', {
+//             elMenu: chartInstance.toolbar.elMenu, // El elemento del menú
+//             elMenuItems: chartInstance.toolbar.elMenuItems, // Items del menú
+//             toolbarPosition: chartInstance.toolbar.toolbarPosition,
+//             isToolbarHidden: chartInstance.toolbar.isToolbarHidden,
+//             // Métodos disponibles
+//             toggleMenu: chartInstance.toolbar.toggleMenu,
+//             toggleOff: chartInstance.toolbar.toggleOff,
+//             toggleOn: chartInstance.toolbar.toggleOn,
+//             enableZooming: chartInstance.toolbar.enableZooming,
+//             disableZooming: chartInstance.toolbar.disableZooming
+//             // ... más propiedades y métodos
+//         })
+//     }
+
+//     // if (exportButton) {
+//     //     console.log('el', exportButton);
+//     //     exportButton.click();
+//     // }
+// };
 </script>
 
 <style scoped>

@@ -9,6 +9,7 @@ import VueUiHeatmapView from '@/views/vuedataui-view/VueUiHeatmapView.vue'
 import VueUiQuickChartView from '@/views/vuedataui-view/VueUiQuickChartView.vue'
 import VueLightweightView from '@/views/VueLightweightView.vue'
 import VueApexChartView from '@/views/VueApexChartView.vue'
+import VueChartJsView from '@/views/VueChartJsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -103,6 +104,23 @@ const router = createRouter({
           path: '/apexchartdonnut',
           name: 'apexchartdonnut',
           component: () => import('../views/vueapexchart-view/DonnutChartView.vue')
+        }
+      ]
+    },
+    {
+      path: '/vue-chart-js',
+      name: 'vue-chart-js',
+      component: VueChartJsView,
+      children: [
+        {
+          path: '/heatmapjs',
+          name: 'heatmapjs',
+          component: () => import('../views/vuechartjs-view/HeatmapView.vue')
+        },
+        {
+          path: '/barchartjs',
+          name: 'barchartjs',
+          component: () => import('../views/vuechartjs-view/BarChartView.vue')
         }
       ]
     }

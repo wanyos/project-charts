@@ -77,6 +77,6 @@ const chartOptions = reactive({
 
 <style lang="scss" scoped>
 .div__main {
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 </style>
