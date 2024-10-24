@@ -5,6 +5,7 @@
       <router-link to="heatmapjs" class="nav__link">HeatmapJs</router-link>
       <router-link to="barchartjs" class="nav__link">BarChartJs</router-link>
       <router-link to="areachartjs" class="nav__link">AreaChartJs</router-link>
+      <router-link to="piechartjs" class="nav__link">PieChartJs</router-link>
     </nav>
   </header>
 

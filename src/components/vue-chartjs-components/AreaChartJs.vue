@@ -1,5 +1,5 @@
 <template>
-  <Line height="250px" width="450px" :data="chartData" :options="chartOptions" />
+  <Line height="250px" width="550px" :data="chartData" :options="chartOptions" />
 </template>
 
 <script setup>
@@ -18,19 +18,26 @@ import { ref } from 'vue'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
+const props = defineProps({
+  colorSeries: {
+    type: String,
+    default: ''
+  }
+})
+
 const chartData = ref({
   labels: ['10 Apr', '11 Apr', '12 Apr', '13 Apr', '14 Apr', '15 Apr', '16 Apr'],
   datasets: [
     {
       label: 'Data One',
-      backgroundColor: '#08B545',
-      borderColor: '#08B545', // Color de la línea
+      backgroundColor: props.colorSeries,
+      borderColor: props.colorSeries,
       data: [5, 3, 8, 0, 11, 1, 5],
-      borderWidth: 4,
+      borderWidth: 2,
       tension: 0.4,
       fill: {
         target: 'origin',
-        above: '#08B545', // Area will be red above the origin
+        above: props.colorSeries, // Area will be red above the origin
         below: 'rgb(0, 0, 255)' // And blue below the origin
       }
       //   pointBackgroundColor: '#08B545',

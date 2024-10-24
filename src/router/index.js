@@ -126,6 +126,11 @@ const router = createRouter({
           path: '/areachartjs',
           name: 'areachartjs',
           component: () => import('../views/vuechartjs-view/AreaChartView.vue')
+        },
+        {
+          path: '/piechartjs',
+          name: 'pechartjs',
+          component: () => import('../views/vuechartjs-view/PieChartView.vue')
         }
       ]
     }

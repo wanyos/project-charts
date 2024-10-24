@@ -34,13 +34,11 @@ onMounted(() => {
         backgroundColor(context) {
           const value = context.dataset.data[context.dataIndex].v
           const alpha = (value - 5) / 40
-          // return `rgba(144, 238, 144, ${alpha})`
           return `rgba(98, 157, 203, ${alpha})`
         },
         borderColor(context) {
           const value = context.dataset.data[context.dataIndex].v
           const alpha = (value - 5) / 40
-          // return `rgba(0, 100, 0, ${alpha})`
           return `rgba(98, 157, 203, ${alpha})`
         },
         borderWidth: 1,

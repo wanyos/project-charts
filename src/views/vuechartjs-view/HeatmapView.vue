@@ -2,6 +2,8 @@
   <div>
     <h3>HeatmapJs</h3>
     <section>
+      <HeatmapScale />
+      <HeatmapTime />
       <HeatmapChartJs />
       <HeatmapCalendar />
     </section>
@@ -9,6 +11,8 @@
 </template>
 
 <script setup>
+import HeatmapScale from '@/components/vue-chartjs-components/HeatmapScale.vue';
+import HeatmapTime from '@/components/vue-chartjs-components/HeatmapTime.vue';
 import HeatmapChartJs from '@/components/vue-chartjs-components/HeatmapChartJs.vue'
 import HeatmapCalendar from '@/components/vue-chartjs-components/HeatmapCalendar.vue';
 </script>
