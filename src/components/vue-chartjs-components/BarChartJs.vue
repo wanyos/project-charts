@@ -18,18 +18,10 @@ import {
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const chartData = ref({
-  labels: [
-    '< 15m',
-    '1h',
-    '4h',
-    '12h',
-    '1d',
-    '2d',
-    '> 2d'
-  ],
+  labels: ['< 15m', '1h', '4h', '12h', '1d', '2d', '> 2d'],
   datasets: [
     {
-      backgroundColor: '#629dcb',
+      backgroundColor: '#08B545',
       data: [0.1, 2, 1.2, 3.9, 1, 4.0, 9]
     }
   ]
@@ -39,14 +31,26 @@ const chartOptions = ref({
   responsive: false,
   maintainAspectRatio: false,
   plugins: {
-            title: {
-                display: true,
-                text: 'Custom Chart Title'
-            },
-            legend: {
-              display: false
-            }
-        }
+    title: {
+      display: true,
+      text: 'Custom Chart Title'
+    },
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    y: {
+      grid: {
+        display: false
+      }
+    },
+    x: {
+      grid: {
+        display: false
+      }
+    }
+  }
 })
 </script>
 

@@ -121,6 +121,11 @@ const router = createRouter({
           path: '/barchartjs',
           name: 'barchartjs',
           component: () => import('../views/vuechartjs-view/BarChartView.vue')
+        },
+        {
+          path: '/areachartjs',
+          name: 'areachartjs',
+          component: () => import('../views/vuechartjs-view/AreaChartView.vue')
         }
       ]
     }
