@@ -23,17 +23,20 @@ const chartData = ref({
   datasets: [
     {
       label: 'Data One',
-      backgroundColor: 'rgba(8, 181, 69, 0.1)',
-
+      backgroundColor: '#08B545',
       borderColor: '#08B545', // Color de la línea
       data: [5, 3, 8, 0, 11, 1, 5],
-      borderWidth: 8,
+      borderWidth: 4,
       tension: 0.4,
-      fill: true, // Activar el relleno
-      pointBackgroundColor: '#08B545',
-      pointBorderColor: '#08B545',
-      pointRadius: 0,
-      pointHoverRadius: 7
+      fill: {
+        target: 'origin',
+        above: '#08B545', // Area will be red above the origin
+        below: 'rgb(0, 0, 255)' // And blue below the origin
+      }
+      //   pointBackgroundColor: '#08B545',
+      //   pointBorderColor: '#08B545',
+      //   pointRadius: 0,
+      //   pointHoverRadius: 7
     }
   ]
 })
@@ -77,7 +80,7 @@ const chartOptions = {
       displayColors: false,
       callbacks: {
         label: function (context) {
-          return `Valor: ${context.parsed.y}`
+          return `Sent: ${context.parsed.y}`
         }
       }
     }
