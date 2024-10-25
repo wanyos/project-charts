@@ -10,6 +10,7 @@ import VueUiQuickChartView from '@/views/vuedataui-view/VueUiQuickChartView.vue'
 import VueLightweightView from '@/views/VueLightweightView.vue'
 import VueApexChartView from '@/views/VueApexChartView.vue'
 import VueChartJsView from '@/views/VueChartJsView.vue'
+import VueAgChartView from '@/views/VueAgChartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -131,6 +132,23 @@ const router = createRouter({
           path: '/piechartjs',
           name: 'pechartjs',
           component: () => import('../views/vuechartjs-view/PieChartView.vue')
+        }
+      ]
+    },
+    {
+      path: '/vue-ag-charts',
+      name: 'vue-ag-charts',
+      component: VueAgChartView,
+      children: [
+        {
+          path: '/agheatmap',
+          name: 'agheatmap',
+          component: () => import('../views/ag-charts/AgHeatmapView.vue')
+        },
+        {
+          path: '/agbarchart',
+          name: 'agbarchart',
+          component: () => import('../views/ag-charts/AgBarChartView.vue')
         }
       ]
     }
