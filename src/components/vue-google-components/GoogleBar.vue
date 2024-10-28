@@ -25,6 +25,7 @@ const options = ref({
     slantedText: true,
     slantedTextAngle: 45
   },
+  chartArea: { width: '80%', height: '65%' },
   colors: ['#08B545', '#CEF0DA'],
   legend: { position: 'none' }
 })

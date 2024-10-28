@@ -8,6 +8,13 @@ import { GChart } from 'vue-google-charts'
 
 const type = ref('LineChart')
 
+const props = defineProps({
+  colorSeries: {
+    type: String,
+    default: ''
+  }
+})
+
 function timeToMinutes(time) {
   const [hours, minutes, seconds] = time.split(':').map(Number)
   return hours * 60 + minutes + seconds / 60
@@ -61,12 +68,14 @@ const options = ref({
   legend: { position: 'none' },
   series: {
     0: {
-      color: '#08B545', // Cambiar color de la línea
+      // color: '#08B545', // Cambiar color de la línea
+      color: props.colorSeries, // Cambiar color de la línea
       lineWidth: 5, // Grosor de la línea
       pointsVisible: true, // Mostrar puntos en cada valor
       pointSize: 8 // Tamaño de los puntos
     }
-  }
+  },
+  chartArea: { width: '70%', height: '65%' },
 })
 </script>
 

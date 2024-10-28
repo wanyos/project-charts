@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <GChart v-if="ready" :type="type" :data="data" :options="options" class="chart" />
 </template>
 
@@ -63,7 +63,21 @@ onMounted(async () => {
 .chart {
   margin: auto;
 }
-</style>
+</style> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- <template>
   <GChart :type="type" :data="data" :options="options" class="chart" />
@@ -125,6 +139,26 @@ const options = ref({
 }
 </style> -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <template>
   <GChart :type="type" :data="data" :options="options" :settings="settings" class="chart" />
 </template>
@@ -183,6 +217,19 @@ const settings = ref({
 }
 </style> -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <template>
   <GChart :type="type" :data="data" :options="options" :settings="settings" class="chart" />
 </template>
@@ -234,3 +281,119 @@ const settings = ref({
   margin: auto;
 }
 </style> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<template>
+  <GChart
+    :type="type"
+    :data="data"
+    :options="options"
+    :settings="settings"
+    class="chart"
+  />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { GChart } from 'vue-google-charts'
+
+const type = ref('Table')
+
+
+const generateData = () => {
+  const days = ['', 'M', 'T', 'W', 'T', 'F', 'S', 'S'] // Encabezados de columna
+  const hours = Array.from({ length: 24 }, (_, i) => `${i}:00`)
+
+  // Crear la estructura de datos con "Hour" como encabezado de primera columna
+  const data = [days] // Primera fila como encabezado de columnas
+
+  // Generar los datos aleatorios para cada hora del día
+  hours.forEach(hour => {
+    const row = [hour]
+    days.slice(1).forEach(() => row.push(Math.floor(Math.random() * 21)))
+    data.push(row)
+  })
+
+  return data
+}
+
+const data = ref(generateData())
+
+const options = ref({
+  width: 250,
+  height: 600,
+  chartData: {
+    xLabels: ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+  }
+  // allowHtml: true,
+  // frozenColumns: 1,
+  // sort: 'disable',
+  // cssClassNames: {
+  //   headerRow: 'header-row',
+  //   tableRow: 'table-row',
+  //   oddTableRow: 'table-row',
+  //   selectedTableRow: 'table-row',
+  //   tableCell: 'table-cell',
+  //   headerCell: 'header-cell'
+  // },
+  // formatters: [
+  //   {
+  //     type: 'ColorFormat',
+  //     ranges: [
+  //       { from: 0, to: 5, color: '#ffffff', bgcolor: '#f1eef6' },
+  //       { from: 6, to: 10, color: '#ffffff', bgcolor: '#bdc9e1' },
+  //       { from: 11, to: 15, color: '#ffffff', bgcolor: '#74a9cf' },
+  //       { from: 16, to: 20, color: '#ffffff', bgcolor: '#0570b0' }
+  //     ],
+  //     columns: Array.from({ length: 7 }, (_, i) => i + 1) // columnas de 1 a 7 (días)
+  //   }
+  // ]
+})
+
+const settings = ref({
+  packages: ['table']
+})
+</script>
+
+<style scoped>
+.chart {
+  margin: auto;
+  
+}
+
+/* :deep(.header-row) {
+  background-color: #f8f9fa !important;
+  font-weight: bold;
+}
+
+:deep(.table-cell), :deep(.header-cell) {
+  text-align: center !important;
+  padding: 12px !important;
+  border: 1px solid #dee2e6;
+}
+
+:deep(.google-visualization-table) {
+  border-collapse: collapse;
+}
+
+:deep(.google-visualization-table-tr-over), 
+:deep(.google-visualization-table-tr-over td), 
+:deep(.google-visualization-table-tr-over-nonstrict) {
+  background-color: transparent !important;
+}
+
+:deep(.google-visualization-table-tr-sel), 
+:deep(.google-visualization-table-tr-sel td) {
+  background-color: transparent !important;
+} */
+</style>

@@ -195,6 +195,21 @@ const router = createRouter({
           path: '/googleheatmap',
           name: 'googleheatmap',
           component: () => import('../views/googlechart-view/GoogleHeatmapView.vue')
+        },
+        {
+          path: '/googlearea',
+          name: 'googlearea',
+          component: () => import('../views/googlechart-view/GoogleAreaView.vue')
+        },
+        {
+          path: '/googlepie',
+          name: 'googlepie',
+          component: () => import('../views/googlechart-view/GooglePieView.vue')
+        },
+        {
+          path: '/googlebubble',
+          name: 'googlebubble',
+          component: () => import('../views/googlechart-view/GoogleBubbleView.vue')
         }
       ]
     }
