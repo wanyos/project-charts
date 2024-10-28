@@ -6,6 +6,7 @@
     <router-link to="vue-apexchart" class="nav__link">VueApexChart</router-link>
     <router-link to="vue-chart-js" class="nav__link">VueChartJs</router-link>
     <router-link to="vue-ag-charts" class="nav__link">VueAgCharts</router-link>
+    <router-link to="vue-chartkick" class="nav__link">VueChartKick</router-link>
   </nav>
 
   <section>

@@ -11,6 +11,7 @@ import VueLightweightView from '@/views/VueLightweightView.vue'
 import VueApexChartView from '@/views/VueApexChartView.vue'
 import VueChartJsView from '@/views/VueChartJsView.vue'
 import VueAgChartView from '@/views/VueAgChartView.vue'
+import VueChartKickView from '@/views/VueChartKickView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -149,6 +150,28 @@ const router = createRouter({
           path: '/agbarchart',
           name: 'agbarchart',
           component: () => import('../views/ag-charts/AgBarChartView.vue')
+        }
+      ]
+    },
+    {
+      path: '/vue-chartkick',
+      name: 'vuechartkick',
+      component: VueChartKickView,
+      children: [
+        {
+          path: '/bubblechart',
+          name: 'bubblechart',
+          component: () => import('../views/vuechartkick-vue/BubbleChartView.vue')
+        },
+        {
+          path: '/scatterchart',
+          name: 'scatterchart',
+          component: () => import('../views/vuechartkick-vue/ScatterChartView.vue')
+        },
+        {
+          path: '/linechart',
+          name: 'linechart',
+          component: () => import('../views/vuechartkick-vue/LineChartView.vue')
         }
       ]
     }
