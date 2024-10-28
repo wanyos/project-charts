@@ -7,6 +7,7 @@
     <router-link to="vue-chart-js" class="nav__link">VueChartJs</router-link>
     <router-link to="vue-ag-charts" class="nav__link">VueAgCharts</router-link>
     <router-link to="vue-chartkick" class="nav__link">VueChartKick</router-link>
+    <router-link to="vue-google" class="nav__link">VueGoogleChart</router-link>
   </nav>
 
   <section>

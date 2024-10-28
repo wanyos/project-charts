@@ -12,6 +12,7 @@ import VueApexChartView from '@/views/VueApexChartView.vue'
 import VueChartJsView from '@/views/VueChartJsView.vue'
 import VueAgChartView from '@/views/VueAgChartView.vue'
 import VueChartKickView from '@/views/VueChartKickView.vue'
+import VueGoogleChartView from '@/views/VueGoogleChartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -172,6 +173,28 @@ const router = createRouter({
           path: '/linechart',
           name: 'linechart',
           component: () => import('../views/vuechartkick-vue/LineChartView.vue')
+        }
+      ]
+    },
+    {
+      path: '/vue-google',
+      name: 'vuegoogle',
+      component: VueGoogleChartView,
+      children: [
+        {
+          path: '/googlebar',
+          name: 'googlebar',
+          component: () => import('../views/googlechart-view/GoogleBarView.vue')
+        },
+        {
+          path: '/googleline',
+          name: 'googleline',
+          component: () => import('../views/googlechart-view/GoogleLineView.vue')
+        },
+        {
+          path: '/googleheatmap',
+          name: 'googleheatmap',
+          component: () => import('../views/googlechart-view/GoogleHeatmapView.vue')
         }
       ]
     }

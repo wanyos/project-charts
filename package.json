@@ -27,6 +27,7 @@
     "vue-chartkick": "^1.1.0",
     "vue-data-ui": "^2.3.25",
     "vue-echarts": "^7.0.3",
+    "vue-google-charts": "^1.1.0",
     "vue-router": "^4.3.3",
     "vue3-apexcharts": "^1.7.0"
   },
