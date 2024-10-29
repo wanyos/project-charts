@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>HeatmapChat</h3>
+    <h3>HeatmapChart</h3>
 
     <section>
       <GoogleHeatmap />

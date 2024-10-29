@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>BarChat</h3>
+    <h3>BarChart</h3>
 
     <section>
       <GoogleBar />

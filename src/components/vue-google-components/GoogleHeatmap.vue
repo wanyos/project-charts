@@ -65,172 +65,7 @@ onMounted(async () => {
 }
 </style> -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <template>
-  <GChart :type="type" :data="data" :options="options" class="chart" />
-</template>
-
-<script setup>
-import { ref } from 'vue'
-import { GChart } from 'vue-google-charts'
-
-const type = ref('ScatterChart')
-
-// Generamos los datos en un formato compatible con ScatterChart
-const generateData = () => {
-  const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  const data = [['Day', 'Hour', 'Emails Sent']]
-
-  for (let hour = 0; hour < 24; hour++) {
-    for (let i = 0; i < daysOfWeek.length; i++) {
-      const emailsSent = Math.floor(Math.random() * 50)
-      data.push([daysOfWeek[i], hour, emailsSent])
-    }
-  }
-
-  return data
-}
-
-const data = ref(generateData())
-
-const options = ref({
-  title: 'Weekly Email Activity',
-  hAxis: {
-    title: 'Day of the Week',
-    ticks: [
-      { v: 0, f: 'Mon' },
-      { v: 1, f: 'Tue' },
-      { v: 2, f: 'Wed' },
-      { v: 3, f: 'Thu' },
-      { v: 4, f: 'Fri' },
-      { v: 5, f: 'Sat' },
-      { v: 6, f: 'Sun' }
-    ]
-  },
-  vAxis: {
-    title: 'Hour of the Day',
-    minValue: 0,
-    maxValue: 23
-  },
-  sizeAxis: { minValue: 0, maxSize: 50 },
-  colorAxis: { colors: ['#f7fbff', '#08306b'] },
-  legend: 'none',
-  width: 800,
-  height: 600
-})
-</script>
-
-<style scoped>
-.chart {
-  margin: auto;
-}
-</style> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <template>
-  <GChart :type="type" :data="data" :options="options" :settings="settings" class="chart" />
-</template>
-
-<script setup>
-import { ref } from 'vue'
-import { GChart } from 'vue-google-charts'
-
-const type = ref('Calendar')
-
-// Generamos datos simulados para representar la cantidad de correos por hora en cada día
-const generateData = () => {
-  const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  const data = [
-    [
-      { type: 'string', id: 'Day' },
-      { type: 'number', id: 'Hour' },
-      { type: 'number', id: 'Emails Sent' }
-    ]
-  ]
-
-  for (let hour = 0; hour < 24; hour++) {
-    for (const day of daysOfWeek) {
-      // Genera un número aleatorio de correos enviados (ejemplo de 0 a 50)
-      const emailsSent = Math.floor(Math.random() * 50)
-      data.push([day, hour, emailsSent])
-    }
-  }
-
-  return data
-}
-
-const data = ref(generateData())
-
-const options = ref({
-  title: 'Weekly Email Activity',
-  hAxis: { title: 'Day of the Week' },
-  vAxis: { title: 'Hour of the Day' },
-  colorAxis: {
-    colors: ['#f7fbff', '#08306b'], // Degradado de claro a oscuro
-    minValue: 0,
-    maxValue: 50
-  },
-  width: 800,
-  height: 600
-})
-
-const settings = ref({
-  packages: ['calendar']
-})
-</script>
-
-<style scoped>
-.chart {
-  margin: auto;
-}
-</style> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <template>
+<template>
   <GChart :type="type" :data="data" :options="options" :settings="settings" class="chart" />
 </template>
 
@@ -241,33 +76,76 @@ import { GChart } from 'vue-google-charts'
 // Tipo de gráfico Calendar
 const type = ref('Calendar')
 
+// const getTime = (h, m, s) => {
+//   const tm = new Date()
+//   tm.setHours(h, m, s)
+//   return tm
+// }
+
 // Datos de muestra para el calendario
+
 const data = ref([
   [
     { type: 'date', id: 'Date' },
     { type: 'number', id: 'Won/Loss' }
   ],
-  [new Date(2012, 3, 13), 37032],
-  [new Date(2012, 3, 14), 38024],
-  [new Date(2012, 3, 15), 38024],
-  [new Date(2012, 3, 16), 38108],
-  [new Date(2012, 3, 17), 38229],
+  //   [getTime(13, 0, 0), 37032],
+  //   [getTime(14, 0, 0), 38024],
+  //   [getTime(15, 0, 0), 38024],
+  //   [getTime(16, 0, 0), 38108],
+  //   [getTime(17, 0, 0), 38229]
 
-  [new Date(2013, 9, 4), 38177],
-  [new Date(2013, 9, 5), 38705],
-  [new Date(2013, 9, 12), 38210],
-  [new Date(2013, 9, 13), 38029],
-  [new Date(2013, 9, 19), 38823],
-  [new Date(2013, 9, 23), 38345],
-  [new Date(2013, 9, 24), 38436],
-  [new Date(2013, 9, 30), 38447]
+  [new Date(2012, 3, 13), 37032],
+  [new Date(2012, 3, 14), 38000],
+  [new Date(2012, 3, 15), 12004],
+  [new Date(2012, 3, 16), 28108],
+  [new Date(2012, 3, 17), 38229]
+
+  //   [new Date(2013, 9, 4), 38177],
+  //   [new Date(2013, 9, 5), 38705],
+  //   [new Date(2013, 9, 12), 38210],
+  //   [new Date(2013, 9, 13), 38029],
+  //   [new Date(2013, 9, 19), 38823],
+  //   [new Date(2013, 9, 23), 38345],
+  //   [new Date(2013, 9, 24), 38436],
+  //   [new Date(2013, 9, 30), 38447]
 ])
 
-// Opciones de personalización del gráfico
 const options = ref({
-  title: 'Red Sox Attendance',
   width: 800,
-  height: 700
+  height: 800,
+  calendar: {
+    cellColor: {
+      stroke: 'blue', // Color the border of the squares.
+      strokeOpacity: 0.5, // Make the borders half transparent.
+      strokeWidth: 2
+    },
+    dayOfWeekLabel: {
+      fontName: 'Times-Roman',
+      fontSize: 16,
+      color: 'black',
+      bold: false,
+      italic: false
+    },
+    focusedCellColor: {
+      stroke: 'red',
+      strokeOpacity: 0.8,
+      strokeWidth: 3
+    },
+    monthLabel: {
+      fontName: 'Times-Roman',
+      fontSize: 16,
+      color: 'blue',
+      bold: true,
+      italic: false
+    },
+    colorAxis: {
+      minValue: 0,
+      colors: ['#FF0000', '#00FF00']
+    },
+    cellSize: 20,
+    height: 600
+  }
 })
 
 // Configuración adicional para cargar el paquete Calendar de Google Charts
@@ -280,20 +158,9 @@ const settings = ref({
 .chart {
   margin: auto;
 }
-</style> -->
+</style>
 
-
-
-
-
-
-
-
-
-
-
-
-<template>
+<!-- <template>
   <GChart
     :type="type"
     :data="data"
@@ -396,4 +263,4 @@ const settings = ref({
 :deep(.google-visualization-table-tr-sel td) {
   background-color: transparent !important;
 } */
-</style>
+</style> -->

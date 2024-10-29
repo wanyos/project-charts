@@ -210,6 +210,11 @@ const router = createRouter({
           path: '/googlebubble',
           name: 'googlebubble',
           component: () => import('../views/googlechart-view/GoogleBubbleView.vue')
+        },
+        {
+          path: '/googlescatter',
+          name: 'googlescatter',
+          component: () => import('../views/googlechart-view/GoogleScatterView.vue')
         }
       ]
     }

@@ -8,6 +8,7 @@
       <router-link to="googlearea" class="nav__link">GoogleArea</router-link>
       <router-link to="googlepie" class="nav__link">GooglePie</router-link>
       <router-link to="googlebubble" class="nav__link">GoogleBubble</router-link>
+      <router-link to="googlescatter" class="nav__link">GoogleScatter</router-link>
     </nav>
   </header>
 

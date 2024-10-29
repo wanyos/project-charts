@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>LineChat</h3>
+    <h3>LineChart</h3>
 
     <section>
       <GoogleLine :color-series="colorSent" />
