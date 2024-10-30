@@ -68,6 +68,11 @@ const router = createRouter({
           path: '/vueuipie',
           name: 'vueuipie',
           component: () => import('../views/vuedataui-view/VueUiPieView.vue')
+        },
+        {
+          path: '/vueuisparkstack',
+          name: 'vueuisparkstack',
+          component: () => import('../views/vuedataui-view/VueUiSparkStack.vue')
         }
       ]
     },

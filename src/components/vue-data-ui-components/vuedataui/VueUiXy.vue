@@ -5,99 +5,102 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { VueDataUi } from 'vue-data-ui'
 import 'vue-data-ui/style.css'
-// import { getVueDataUiConfig } from 'vue-data-ui'
-// const xy_config = getVueDataUiConfig('vue_ui_xy')
-// const waffle_config = getVueDataUiConfig('vue_ui_waffle')
 
-// const dataset = ref([
-//   {
-//     name: 'Serie 1',
-//     series: [0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144],
-//     type: 'line'
+// const props = defineProps({
+//   colorSeries: {
+//     type: Object,
+//     default: () => {}
 //   }
-// ])
+// })
 
-const dataset = ref([
-  {
-    values: [3, 12, 7, 9, 15, 27, 31],
-    color: '#08B545'
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 2]
-  },
-  {
-    values: [5, 2, 11, 6, 3, 8, 9]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  },
-  {
-    values: [8, 9, 3, 18, 11, 7, 19]
-  }
-])
+const dataset = ref([])
+
+// function generateData() {
+//   const diasSemana = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+//   const objetos = Array.from({ length: 24 }, (_, hora) => {
+//     const values = diasSemana.map(() => Math.floor(Math.random() * 21))
+//     return { hour: hora, values }
+//   })
+//   return objetos
+// }
+
+
+
+function generateData() {
+  const diasSemana = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  const objetos = []
+  diasSemana.forEach((dia) => {
+    const values = []
+    for (let i = 0; i <= 23; i++) {
+      values.push(Math.floor(Math.random() * 21))
+    }
+    objetos.push({ name: dia, values })
+  })
+  return objetos
+}
+
+onMounted(() => {
+  dataset.value = generateData()
+})
+
+// const dataset = [
+//   {
+//     name: 'Mon',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0,7]
+//   },
+//   {
+//     name: 'Tue',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0,2]
+//   },
+//   {
+//     name: 'Wed',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0,2]
+//   },
+//   {
+//     name: 'Thu',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0,1]
+//   },
+//   {
+//     name: 'Fri',
+//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0,4]
+//   },
+//   {
+//     name: 'Sat',
+//     values: [1, 5, 0, 0, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0,7]
+//   },
+//   {
+//     name: 'Sun',
+//     values: [1, 8, 1, 5, 1, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0,4]
+//   }
+// ]
 
 // const config = ref({
 //   style: {
 //     backgroundColor: '#FFFFFF',
-//     color: '#4A4A4A',
+//     color: '#1A1A1A',
 //     fontFamily: 'inherit',
 //     layout: {
-//       padding: { top: 15, right: 0, bottom: 0, left: 0 },
+//       height: 10,
+//       padding: { top: 0, right: 278, bottom: 0, left: 278 },
 //       cells: {
-//         width: 12,
-//         height: 18,
-//         value: { show: false, fontSize: 3, bold: false, roundingValue: 0, color: '#FFFFFF' },
-//         colors: { hot: '#08B545', cold: '#ffffff', underlayer: '#a8e6a3' },
-//         spacing: 0.1,
-//         selected: { border: 0.2, color: '#08B545' }
+//         height: 10,
+//         value: { show: false, fontSize: 12, bold: false, roundingValue: 0, color: '#FFFFFF' },
+//         colors: {
+//           hot: props.colorSeries.hot,
+//           cold: props.colorSeries.cold,
+//           underlayer: props.colorSeries.underlayer
+//         },
+//         spacing: 0.2,
+//         selected: { border: 1, color: '#469d3a' }
 //       },
 //       dataLabels: {
 //         prefix: '',
 //         suffix: '',
 //         xAxis: {
-//           show: true,
-//           values: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-//           fontSize: 2,
-//           color: '#4A4A4A',
-//           bold: false,
-//           offsetX: 0,
-//           offsetY: 4
-//         },
-//         yAxis: {
-//           show: true,
+//           show: false,
 //           values: [
 //             '00:00',
 //             '01:00',
@@ -124,51 +127,60 @@ const dataset = ref([
 //             '22:00',
 //             '23:00'
 //           ],
-//           fontSize: 2,
-//           color: '#4A4A4A',
+//           fontSize: 10,
+//           color: '#1A1A1A',
+//           bold: false,
+//           offsetX: 4,
+//           offsetY: 4
+//         },
+//         yAxis: {
+//           show: true,
+//           values: [],
+//           fontSize: 6,
+//           color: '#1A1A1A',
 //           bold: false,
 //           offsetY: 0,
-//           offsetX: 4
+//           offsetX: 0
 //         }
 //       }
 //     },
-//     // title: {
-//     //   text: 'Title',
-//     //   color: '#FAFAFA',
-//     //   fontSize: 20,
-//     //   bold: true,
-//     //   textAlign: 'center',
-//     //   paddingLeft: 0,
-//     //   paddingRight: 0,
-//     //   subtitle: { color: '#A1A1A1', text: 'Subtitle', fontSize: 16, bold: false }
-//     // },
-//     legend: {
-//       show: true,
-//       backgroundColor: '#08B545',
-//       color: '#1A1A1A',
-//       fontSize: 2,
+//     title: {
+//       text: 'Title',
+//       color: '#FAFAFA',
+//       fontSize: 20,
 //       bold: true,
-//       roundingValue: 0,
-//       position: 'right',
-//       scaleBorderRadius: 5
+//       textAlign: 'center',
+//       paddingLeft: 0,
+//       paddingRight: 0,
+//       subtitle: { color: '#1a1a1a', text: '00 -- 23', fontSize: 12, bold: false }
+//     },
+//     legend: {
+//       show: false,
+//       backgroundColor: '#ffffff',
+//       color: '#ffffff',
+//       fontSize: 20,
+//       bold: true,
+//       roundingValue: 90,
+//       position: 'bottom',
+//       scaleBorderRadius: 520
 //     },
 //     tooltip: {
 //       show: true,
 //       backgroundColor: '#1A1A1A',
 //       color: '#CCCCCC',
-//       fontSize: 14,
+//       fontSize: 12,
 //       roundingValue: 0,
 //       customFormat: null,
-//       borderRadius: 1,
-//       borderColor: '#08B545',
-//       borderWidth: 0,
+//       borderRadius: 4,
+//       borderColor: '#3A3A3A',
+//       borderWidth: 1,
 //       backgroundOpacity: 70,
 //       position: 'center',
 //       offsetY: 24
 //     }
 //   },
 //   userOptions: {
-//     show: false,
+//     show: true,
 //     buttons: { tooltip: true, pdf: true, img: true, csv: true, table: true, fullscreen: true },
 //     buttonTitles: {
 //       open: 'Open options',
@@ -183,209 +195,42 @@ const dataset = ref([
 //   },
 //   table: {
 //     show: false,
-//     responsiveBreakpoint: 100,
+//     responsiveBreakpoint: 400,
 //     colNames: { xAxis: 'Week' },
 //     th: { backgroundColor: '#1A1A1A', color: '#CCCCCC', outline: 'none' },
-//     td: { backgroundColor: '#1A1A1A', color: '#CCCCCC', outline: 'none' }
+//     td: { backgroundColor: '#1A1A1A', color: '#CCCCCC', outline: 'none', roundingValue: 0 }
 //   }
 // })
-
-// const config = ref({
-//   theme: '',
-//   style: {
-//     fontFamily: 'inherit',
-//     backgroundColor: '#FFFFFF',
-//     color: '#1A1A1A',
-//     layout: {
-//       padding: {
-//         top: 60,
-//         right: 25,
-//         bottom: 0,
-//         left: 50
-//       },
-//       cells: {
-//         height: 96,
-//         value: {
-//           show: false,
-//           fontSize: 8,
-//           bold: true,
-//           roundingValue: 0,
-//           color: '#2D353C'
-//         },
-//         colors: {
-//           hot: '#57af4b',
-//           cold: '#e0f0e2',
-//           underlayer: '#FFFFFF'
-//         },
-//         spacing: '0.6',
-//         selected: {
-//           border: 1.9,
-//           color: '#1A1A1A'
-//         }
-//       },
-//       dataLabels: {
-//         prefix: '',
-//         suffix: '',
-//         xAxis: {
-//           show: true,
-//           values: [],
-//           fontSize: 25,
-//           color: '#1A1A1A',
-//           bold: false,
-//           offsetX: 0,
-//           offsetY: 0
-//         },
-//         yAxis: {
-//           show: true,
-//           values: [],
-//           fontSize: 25,
-//           color: '#1A1A1A',
-//           bold: false,
-//           offsetX: 0,
-//           offsetY: 0
-//         }
-//       }
-//     },
-//     // title: {
-//     //   text: 'Title',
-//     //   color: '#1A1A1A',
-//     //   fontSize: 20,
-//     //   bold: true,
-//     //   textAlign: 'center',
-//     //   paddingLeft: 0,
-//     //   paddingRight: 0,
-//     //   subtitle: {
-//     //     color: '#A1A1A1',
-//     //     text: '',
-//     //     fontSize: 16,
-//     //     bold: false
-//     //   }
-//     // },
-//     legend: {
-//       show: true,
-//       bold: true,
-//       backgroundColor: '#FFFFFF',
-//       color: '#1A1A1A',
-//       fontSize: 10,
-//       roundingValue: 0,
-//       position: 'right',
-//       scaleBorderRadius: '18'
-//     },
-//     tooltip: {
-//       show: true,
-//       color: '#1A1A1A',
-//       backgroundColor: '#FFFFFF',
-//       fontSize: 14,
-//       customFormat: null,
-//       borderRadius: 4,
-//       borderColor: '#e1e5e8',
-//       borderWidth: 1,
-//       backgroundOpacity: 100,
-//       position: 'center',
-//       offsetY: 24,
-//       roundingValue: 0
-//     }
-//   },
-//   userOptions: {
-//     show: false,
-//     buttons: {
-//       tooltip: true,
-//       pdf: true,
-//       csv: true,
-//       img: true,
-//       table: true,
-//       labels: false,
-//       fullscreen: true,
-//       sort: false,
-//       stack: false,
-//       animation: false
-//     },
-//     buttonTitles: {
-//       open: 'Open options',
-//       close: 'Close options',
-//       tooltip: 'Toggle tooltip',
-//       pdf: 'Download PDF',
-//       csv: 'Download CSV',
-//       img: 'Download PNG',
-//       table: 'Toggle table',
-//       fullscreen: 'Toggle fullscreen'
-//     }
-//   },
-//   table: {
-//     show: false,
-//     responsiveBreakpoint: 400,
-//     colNames: {
-//       xAxis: 'X'
-//     },
-//     th: {
-//       backgroundColor: '#FFFFFF',
-//       color: '#1A1A1A',
-//       outline: 'none'
-//     },
-//     td: {
-//       backgroundColor: '#FFFFFF',
-//       color: '#1A1A1A',
-//       outline: 'none',
-//       roundingValue: 0
-//     }
-//   }
-// })
-
-// const dataset = [
-//   {
-//     name: 'Mon',
-//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-//   },
-//   {
-//     name: 'Tue',
-//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-//   },
-//   {
-//     name: 'Wed',
-//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-//   },
-//   {
-//     name: 'Thu',
-//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-//   },
-//   {
-//     name: 'Fri',
-//     values: [31, 58, 12, 25, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-//   },
-//   {
-//     name: 'Sat',
-//     values: [1, 5, 0, 0, 13, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-//   },
-//   {
-//     name: 'Sun',
-//     values: [1, 8, 1, 5, 1, 2, 0, 0, 0, 3, 4, 1, 2, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0]
-//   }
-// ]
 
 const config = ref({
   style: {
     responsive: true,
-    backgroundColor: '#FFFFFF',
-    color: '#1A1A1A',
+    backgroundColor: '#ffffff',
+    color: '#1a1a1a',
     fontFamily: 'inherit',
     layout: {
-      padding: { top: 10, right: 4500, bottom: 0, left: 4500 },
-      grid: { show: true, stroke: '#1a1a1a', strokeWidth: 3 },
+      padding: { top: 36, right: 10, bottom: 12, left: 48 },
       cells: {
-        height: 920,
+        height: 36,
         value: { show: false, fontSize: 12, bold: false, roundingValue: 0, color: '#FFFFFF' },
-        colors: { hot: '#469d3a', cold: '#c9f7c3', underlayer: '#8ae27e' },
-        spacing: 2.0,
-        selected: { border: 1, color: '#469d3a' }
+        // colors: {
+        //   hot: props.colorSeries.hot,
+        //   cold: props.colorSeries.cold,
+        //   underlayer: props.colorSeries.underlayer
+        // },
+        spacing: 0.5,
+        selected: { border: 2, color: '#FFFFFF' }
       },
       dataLabels: {
         prefix: '',
         suffix: '',
         xAxis: {
           show: true,
-          values: ['00:00'],
+          values: [
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+          ],
           fontSize: 12,
-          color: '#1A1A1A',
+          color: '#1a1a1a',
           bold: false,
           offsetX: 0,
           offsetY: 0
@@ -394,32 +239,32 @@ const config = ref({
           show: true,
           values: [],
           fontSize: 12,
-          color: '#1A1A1A',
+          color: '#1a1a1a',
           bold: false,
           offsetY: 0,
           offsetX: 0
         }
       }
     },
-    // title: {
-    //   text: 'Title',
-    //   color: '#FAFAFA',
-    //   fontSize: 20,
-    //   bold: true,
-    //   textAlign: 'center',
-    //   paddingLeft: 0,
-    //   paddingRight: 0,
-    //   subtitle: { color: '#A1A1A1', text: 'Subtitle', fontSize: 16, bold: false }
-    // },
+    title: {
+      text: 'Sent Messages',
+      color: '#1a1a1a',
+      fontSize: 20,
+      bold: true,
+      textAlign: 'center',
+      paddingLeft: 0,
+      paddingRight: 0,
+      subtitle: { color: '#1a1a1a', text: 'Sent', fontSize: 16, bold: false }
+    },
     legend: {
       show: true,
       backgroundColor: '#ffffff',
-      color: '#ffffff',
-      fontSize: 0,
+      color: '#1a1a1a',
+      fontSize: 10,
       bold: true,
-      roundingValue: 50,
+      roundingValue: 0,
       position: 'right',
-      scaleBorderRadius: 84
+      scaleBorderRadius: 18
     },
     tooltip: {
       show: true,
@@ -431,13 +276,13 @@ const config = ref({
       borderRadius: 4,
       borderColor: '#3A3A3A',
       borderWidth: 1,
-      backgroundOpacity: 70,
+      backgroundOpacity: 90,
       position: 'center',
       offsetY: 24
     }
   },
   userOptions: {
-    show: false,
+    show: true,
     buttons: { tooltip: true, pdf: true, img: true, csv: true, table: true, fullscreen: true },
     buttonTitles: {
       open: 'Open options',
@@ -449,26 +294,15 @@ const config = ref({
       table: 'Toggle table',
       fullscreen: 'Toggle fullscreen'
     }
-  },
-  table: {
-    show: false,
-    responsiveBreakpoint: 400,
-    colNames: { xAxis: 'Week' },
-    th: { backgroundColor: '#1A1A1A', color: '#CCCCCC', outline: 'none' },
-    td: { backgroundColor: '#1A1A1A', color: '#CCCCCC', outline: 'none', roundingValue: 0 }
   }
 })
 </script>
 
 <style lang="css" scoped>
-.div {
-  width: 55em;
-  margin: 0 auto;
+div {
   border: 1px solid black;
+  width: 650px;
 }
 
-.chart {
-  border: 2px solid black;
-  /* border: 1px solid blue; */
-}
+
 </style>

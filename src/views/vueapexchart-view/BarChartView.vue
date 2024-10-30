@@ -4,6 +4,10 @@
     <section>
       <BarChart />
       <GradientLineChart />
+    
+    </section>
+    <section>
+      <StakedBar />
     </section>
   </div>
 </template>
@@ -11,6 +15,7 @@
 <script setup>
 import BarChart from '@/components/vue-apexchart-components/BarChart.vue'
 import GradientLineChart from '@/components/vue-apexchart-components/GradientLineChart.vue'
+import StakedBar from '@/components/vue-apexchart-components/StakedBar.vue';
 </script>
 
 <style lang="scss" scoped>
