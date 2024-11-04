@@ -197,14 +197,32 @@ const option = ref({
     type: 'category',
     data: days,
     splitArea: {
+      show: false
+    },
+    axisLabel: {
       show: true
+    },
+    splitLine: {
+      show: false
+    },
+    axisTick: {
+      show: false
     }
   },
   yAxis: {
     type: 'category',
     data: hours,
     splitArea: {
-      show: true
+      show: false
+    },
+    splitLine: {
+      show: false
+    },
+    axisLine: {
+      show: false
+    },
+    axisTick: {
+      show: false
     }
   },
   visualMap: {

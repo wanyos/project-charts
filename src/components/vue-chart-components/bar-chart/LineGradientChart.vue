@@ -139,7 +139,8 @@ const option = ref({
 
 <style scoped>
 .chart {
-  height: 100vh;
+  height: 60vh;
+  width: 25em;
   /* margin-top: 4em;
           width: 50%;
           height: 50%; */
