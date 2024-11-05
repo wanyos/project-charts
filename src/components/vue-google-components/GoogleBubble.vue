@@ -1,80 +1,131 @@
 <template>
-    <GChart :type="type" :data="data" :options="options" class="chart" />
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue'
-  import { GChart } from 'vue-google-charts'
-  
-  const type = ref('BubbleChart')
-  
-  // Datos para representar días de la semana en el eje X y horas en el eje Y con un valor de intensidad
-  const data = ref([
-    ['ID', 'Day', 'Hour', 'Intensity', 'Size'],
-    ['Mon', 0, 8, 5, 0.1],
-    ['Mon', 0, 9, 15, 0.1],
-    ['Mon', 0, 10, 12, 0.1],
-    ['Tue', 1, 8, 7, 0.1],
-    ['Tue', 1, 9, 10, 0.1],
-    ['Wed', 2, 10, 20, 0.1],
-    ['Thu', 3, 12, 3, 0.1],
-    ['Fri', 4, 15, 18, 0.1],
-    ['Sat', 5, 20, 0, 0.1],
-    ['Sun', 6, 23, 8, 0.1]
-    // Agrega más datos en el formato ['Día', 'Posición X', 'Hora Y', 'Intensidad', 'Tamaño']
-  ])
-  
-  // Opciones para configurar los colores y el tamaño fijo de las burbujas
-  const options = ref({
-    hAxis: {
-    title: 'Day',
-    ticks: [
-      { v: 0.5, f: 'Mon' },
-      { v: 1.5, f: 'Tue' },
-      { v: 2.5, f: 'Wed' },
-      { v: 3.5, f: 'Thu' },
-      { v: 4.5, f: 'Fri' },
-      { v: 5.5, f: 'Sat' },
-      { v: 6.5, f: 'Sun' }
-    ],
-  },
-    vAxis: {
-      title: 'Hour',
-      ticks: Array.from({ length: 24 }, (_, i) => i) // Solo horas enteras de 0 a 23
-    },
-    bubble: {
-      opacity: 0.8,
-      stroke: 'none'
-    },
-    colorAxis: {
-      colors: ['#E0F7FA', '#006064'] // Escala de colores de claro a oscuro
-    },
-    width: 800,
-    height: 600,
-    chartArea: { width: '80%', height: '65%' },
-    legend: { position: 'none' }
-  })
-  </script>
-  
-  <style scoped>
-  .chart {
-    border: 1px solid black;
+  <GChart :type="type" :data="data" :options="options" class="chart" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { GChart } from 'vue-google-charts'
+
+const type = ref('BubbleChart')
+
+const props = defineProps({
+  colorSeries: {
+    type: Array,
+    default: () => []
   }
-  </style>
+})
 
+// Datos con número de emails enviados como tamaño de la burbuja, alineados a enteros en el eje X
+const data = ref([
+  ['ID', 'Day', 'Hour', 'Emails', 'Size'],
+  ['Mon', 1, 8, 5, 5],
+  ['Mon', 1, 9, 15, 15],
+  ['Mon', 1, 10, 12, 12],
+  ['Tue', 2, 8, 7, 7],
+  ['Tue', 2, 9, 10, 10],
+  ['Wed', 3, 10, 2, 2],
+  ['Thu', 4, 12, 3, 3],
+  ['Fri', 5, 15, 15, 15],
+  ['Sat', 6, 20, 1, 1],
+  ['Sun', 7, 23, 8, 8],
+  ['Sun', 7, 3, 2, 2]
+])
 
+// // Datos para representar días de la semana en el eje X y horas en el eje Y con un valor de intensidad
+// const data = ref([
+//   ['ID', 'Day', 'Hour', 'Intensity', 'Size'],
+//   ['Mon', 0, 8, 5, 0.5],
+//   ['Mon', 0, 9, 15, 0.1],
+//   ['Mon', 0, 10, 12, 0.1],
+//   ['Tue', 1, 8, 7, 0.1],
+//   ['Tue', 1, 9, 10, 0.1],
+//   ['Wed', 2, 10, 20, 0.1],
+//   ['Thu', 3, 12, 3, 0.1],
+//   ['Fri', 4, 15, 18, 0.1],
+//   ['Sat', 5, 20, 0, 0.1],
+//   ['Sun', 6, 23, 8, 0.1]
+//   // Agrega más datos en el formato ['Día', 'Posición X', 'Hora Y', 'Intensidad', 'Tamaño']
+// ])
 
+// Opciones ajustadas para colocar los días en valores enteros
+const options = ref({
+  hAxis: {
+    title: '',
+    ticks: [
+      { v: 1, f: 'Mon' },
+      { v: 2, f: 'Tue' },
+      { v: 3, f: 'Wed' },
+      { v: 4, f: 'Thu' },
+      { v: 5, f: 'Fri' },
+      { v: 6, f: 'Sat' },
+      { v: 7, f: 'Sun' }
+    ],
+    gridlines: { count: 7, color: '#ccc' },
+    textStyle: { fontSize: 12 },
+    minValue: 0, // Ajusta el eje X para empezar justo antes del lunes
+    maxValue: 8
+  },
+  vAxis: {
+    title: '',
+    ticks: Array.from({ length: 24 }, (_, i) => i),
+    gridlines: { color: 'transparent' },
+    textStyle: { fontSize: 12 },
+    minValue: 0,
+    maxValue: 24
+  },
+  bubble: {
+    opacity: 0.8,
+    stroke: 'none',
+    textStyle: { color: 'transparent' }
+  },
+  colorAxis: {
+    // colors: ['#E0F7FA', '#006064']
+    colors: props.colorSeries
+  },
+  tooltip: { trigger: 'focus' },
+  width: 400,
+  height: 900,
+  chartArea: { width: '70%', height: '80%' },
+  legend: { position: 'none' }
+})
 
+// // Opciones para configurar los colores y el tamaño fijo de las burbujas
+// const options = ref({
+//   hAxis: {
+//     title: 'Day',
+//     ticks: [
+//       { v: 0.5, f: 'Mon' },
+//       { v: 1.5, f: 'Tue' },
+//       { v: 2.5, f: 'Wed' },
+//       { v: 3.5, f: 'Thu' },
+//       { v: 4.5, f: 'Fri' },
+//       { v: 5.5, f: 'Sat' },
+//       { v: 6.5, f: 'Sun' }
+//     ]
+//   },
+//   vAxis: {
+//     title: 'Hour',
+//     ticks: Array.from({ length: 24 }, (_, i) => i) // Solo horas enteras de 0 a 23
+//   },
+//   bubble: {
+//     opacity: 0.8,
+//     stroke: 'none'
+//   },
+//   colorAxis: {
+//     colors: ['#E0F7FA', '#006064'] // Escala de colores de claro a oscuro
+//   },
+//   width: 800,
+//   height: 600,
+//   chartArea: { width: '80%', height: '65%' },
+//   legend: { position: 'none' }
+// })
+</script>
 
-
-
-
-
-
-
-
-
-
+<style scoped>
+.chart {
+  border: 1px solid black;
+}
+</style>
 
 <!-- <template>
     <GChart :type="type" :data="data" :options="options" class="chart" />
@@ -114,4 +165,3 @@
     border: 1px solid black;
   }
   </style> -->
-  
