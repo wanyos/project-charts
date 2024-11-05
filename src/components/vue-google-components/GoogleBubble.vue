@@ -18,17 +18,17 @@ const props = defineProps({
 // Datos con número de emails enviados como tamaño de la burbuja, alineados a enteros en el eje X
 const data = ref([
   ['ID', 'Day', 'Hour', 'Emails', 'Size'],
-  ['Mon', 1, 8, 5, 5],
-  ['Mon', 1, 9, 15, 15],
-  ['Mon', 1, 10, 12, 12],
-  ['Tue', 2, 8, 7, 7],
-  ['Tue', 2, 9, 10, 10],
-  ['Wed', 3, 10, 2, 2],
-  ['Thu', 4, 12, 3, 3],
-  ['Fri', 5, 15, 15, 15],
+  ['Mon', 1, 8, 5, 3],
+  ['Mon', 1, 9, 15, 2],
+  ['Mon', 1, 10, 12, 1],
+  ['Tue', 2, 8, 7, 1],
+  ['Tue', 2, 9, 10, 1],
+  ['Wed', 3, 10, 2, 1],
+  ['Thu', 4, 12, 3, 2],
+  ['Fri', 5, 15, 15, 1],
   ['Sat', 6, 20, 1, 1],
-  ['Sun', 7, 23, 8, 8],
-  ['Sun', 7, 3, 2, 2]
+  ['Sun', 7, 23, 8, 1],
+  ['Sun', 7, 3, 30, 1]
 ])
 
 // // Datos para representar días de la semana en el eje X y horas en el eje Y con un valor de intensidad

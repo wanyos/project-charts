@@ -14,6 +14,12 @@ import GoogleBubble from '@/components/vue-google-components/GoogleBubble.vue'
 
 const colorsReceived = ['#CCEAFE', '#8DBCFD', '#0096FB']
 const colorsSent = ['#ffffff', '#a8e6a3', '#08B545']
+
+
+
+
+
+
 </script>
 
 <style lang="scss" scoped>

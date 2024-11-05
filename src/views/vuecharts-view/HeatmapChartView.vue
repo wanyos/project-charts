@@ -14,10 +14,15 @@
       class="section__heatmap"
     />
   </section>
+
+  <section>
+    <DistributionChart />
+  </section>
 </template>
 
 <script setup>
 import HeatMapChart from '@/components/vue-chart-components/heatmap-chart/HeatMapChart.vue'
+import DistributionChart from '@/components/vue-chart-components/heatmap-chart/DistributionChart.vue';
 
 const colorsSent = ['#ffffff', '#a8e6a3', '#08B545']
 const colorsReceived = ['#ffffff', '#4FC3F7', '#0096FB']
