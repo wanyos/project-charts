@@ -9,13 +9,6 @@ import { ref } from 'vue'
 import { VueDataUi } from 'vue-data-ui'
 import 'vue-data-ui/style.css'
 
-// const props = defineProps(
-//     {
-//   colorSeries: Object,
-//   default: () => {}
-// }
-// )
-
 const props = defineProps({
   colorSeries: {
     type: Object,

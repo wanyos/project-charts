@@ -15,7 +15,7 @@
 
 <script setup>
 import HeatMapChart from '@/components/vue-apexchart-components/HeatMapChart.vue'
-import ApexScatterChart from '@/components/vue-apexchart-components/ApexScatterChart.vue';
+import ApexScatterChart from '@/components/vue-apexchart-components/ApexScatterChart.vue'
 const colorSent = ['#08B545']
 const colorReceived = ['#0096FB']
 </script>
@@ -29,6 +29,6 @@ section {
   border: 1px solid black;
   width: 70%;
   margin: 0 auto;
-  padding: 1em;
+  padding: 5em;
 }
 </style>
